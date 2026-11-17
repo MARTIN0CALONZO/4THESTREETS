@@ -1,0 +1,233 @@
+/* Review Modal */
+
+.review-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483002;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.review-modal {
+  background: #fff;
+  color: #111;
+  width: 100%;
+  max-width: 500px;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.review-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.review-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.review-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.review-body {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Product preview */
+.review-product {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.review-product-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #e8ecf1;
+  flex-shrink: 0;
+}
+
+.review-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.review-product-info b {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-product-info span {
+  font-size: 12px;
+  color: #666;
+}
+
+.review-product-info small {
+  font-size: 11px;
+  color: #999;
+}
+
+/* Fields */
+.review-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.review-field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+}
+
+.review-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+  resize: vertical;
+  background: #fff;
+  color: #111;
+}
+
+.review-field textarea:focus {
+  outline: 2px solid #adee40;
+  border-color: #7bb61a;
+}
+
+.review-char-count {
+  align-self: flex-end;
+  font-size: 11px;
+  color: #999;
+}
+
+/* Stars */
+.review-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-star {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 30px;
+  line-height: 1;
+  color: #dcdcdc;
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.review-star:hover {
+  transform: scale(1.15);
+}
+
+.review-star.on {
+  color: #f5b23e;
+}
+
+.review-star-label {
+  margin-left: 8px;
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Error + buttons */
+.review-error {
+  margin: 0;
+  color: #ef4444;
+  font-size: 14px;
+}
+
+.review-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.review-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.review-btn.primary {
+  background: #adee40;
+  color: #111;
+}
+
+.review-btn.secondary {
+  background: #eee;
+  color: #333;
+}
+
+.review-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .review-actions {
+    flex-direction: column-reverse;
+  }
+}
+
+/* Dark mode (body.dark-mode is set from Nav.jsx) */
+body.dark-mode .review-modal { background: #1e1e1e; color: #fff; }
+body.dark-mode .review-header { border-bottom-color: #333; }
+body.dark-mode .review-modal h3,
+body.dark-mode .review-modal b,
+body.dark-mode .review-modal label { color: #e0e0e0; }
+body.dark-mode .review-close { color: #ccc; }
+body.dark-mode .review-product { background: #2a2a2a; }
+body.dark-mode .review-product-info span { color: #aaa; }
+body.dark-mode .review-product-info small { color: #777; }
+body.dark-mode .review-field textarea {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+body.dark-mode .review-star { color: #444; }
+body.dark-mode .review-star.on { color: #f5b23e; }
+body.dark-mode .review-btn.secondary { background: #333; color: #eee; }

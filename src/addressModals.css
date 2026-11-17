@@ -1,0 +1,341 @@
+/* Address modals (Profile + Checkout) */
+
+.addr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Ang form modal ay laging nasa ibabaw ng listahan */
+.addr-overlay-top {
+  z-index: 2147483001;
+}
+
+.addr-modal {
+  background: #fff;
+  color: #111;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  text-align: left;
+}
+
+.addr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.addr-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.addr-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.addr-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addr-hint,
+.addr-note {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.addr-note {
+  background: #fff8e1;
+  border: 1px solid #ffe08a;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #6b5200;
+}
+
+/* ---------- Form ---------- */
+.addr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.addr-field span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.addr-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  color: #111;
+}
+
+.addr-field input:focus {
+  outline: 2px solid #adee40;
+  border-color: #7bb61a;
+}
+
+.addr-row {
+  display: flex;
+  gap: 12px;
+}
+
+.addr-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.addr-error {
+  margin: 0;
+  color: #ef4444;
+  font-size: 14px;
+}
+
+/* ---------- Listahan ---------- */
+.addr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addr-option {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.addr-option.selected {
+  border-color: #7bb61a;
+  background: #f6fde7;
+}
+
+.addr-option input[type='radio'] {
+  margin-top: 4px;
+  accent-color: #5f9410;
+}
+
+.addr-option-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.addr-option-text p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #444;
+  word-break: break-word;
+}
+
+.addr-option-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addr-badge {
+  background: #adee40;
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.addr-saving {
+  font-size: 12px;
+  color: #888;
+}
+
+.addr-add-btn {
+  background: none;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  padding: 10px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+}
+
+.addr-add-btn:hover {
+  border-color: #7bb61a;
+  color: #4f7d0c;
+}
+
+/* ---------- Mga button ---------- */
+.addr-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.addr-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.addr-btn.primary {
+  background: #adee40;
+  color: #111;
+}
+
+.addr-btn.secondary {
+  background: #eee;
+  color: #333;
+}
+
+.addr-btn:disabled,
+.addr-close:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Buod ng address sa checkout ---------- */
+.addr-summary {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fafafa;
+  color: #111;
+}
+
+.addr-summary p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.addr-change-btn {
+  margin-top: 8px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .addr-row {
+    flex-direction: column;
+  }
+}
+
+/* Province / City / Barangay dropdowns inside the address modal */
+.addr-psgc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addr-psgc .twoinput {
+  width: 100%;
+  max-width: 100%;
+  gap: 10px;
+}
+
+.addr-psgc select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  color: #111;
+}
+
+.addr-psgc .twoinput select {
+  width: 100%;
+  max-width: none;
+}
+
+.addr-psgc select:focus {
+  outline: 2px solid #adee40;
+  border-color: #7bb61a;
+}
+
+.addr-psgc select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .addr-psgc .twoinput {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Dark mode (body.dark-mode is set from Nav.jsx) ---------- */
+body.dark-mode .addr-modal { background: #1e1e1e; color: #fff; }
+body.dark-mode .addr-header { border-bottom-color: #333; }
+body.dark-mode .addr-modal h3,
+body.dark-mode .addr-modal p,
+body.dark-mode .addr-modal span,
+body.dark-mode .addr-modal b,
+body.dark-mode .addr-modal label { color: #e0e0e0; }
+body.dark-mode .addr-modal .addr-hint,
+body.dark-mode .addr-modal .addr-option-text p,
+body.dark-mode .addr-modal .addr-saving { color: #aaa; }
+body.dark-mode .addr-close { color: #ccc; }
+body.dark-mode .addr-field input,
+body.dark-mode .addr-psgc select {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+body.dark-mode .addr-option { border-color: #333; }
+body.dark-mode .addr-option.selected { background: #26321a; border-color: #abed41; }
+body.dark-mode .addr-add-btn { color: #ddd; border-color: #555; }
+body.dark-mode .addr-modal .addr-note { background: #3a3320; border-color: #6b5200; color: #ffe08a; }
+body.dark-mode .addr-modal .addr-error { color: #ef4444; }
+body.dark-mode .addr-modal .addr-badge { color: #111; }
+body.dark-mode .addr-btn.secondary { background: #333; color: #eee; }
+body.dark-mode .addr-btn.primary { color: #111; }
+body.dark-mode .addr-summary { background: #2a2a2a; border-color: #444; }
+body.dark-mode .addr-summary p,
+body.dark-mode .addr-summary b { color: #fff; }
+body.dark-mode .address-badge { color: #0a0a0a; }

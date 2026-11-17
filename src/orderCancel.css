@@ -1,0 +1,122 @@
+/* Cancel Order sa OrderDetailsModal.
+   I-import sa OrderDetailsModal.jsx:  import './orderCancel.css'
+   Palitan ang mga kulay kung gusto mo ng ibang brand colors. */
+
+/* Cancel button */
+.od-actions .od-btn.danger {
+  background: #dc2626;
+  color: #fff;
+  border: 1px solid #dc2626;
+}
+
+.od-actions .od-btn.danger:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.od-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Kumpirmasyon */
+.od-cancel-box {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  border-radius: 10px;
+}
+
+.od-cancel-box b {
+  display: block;
+  color: #991b1b;
+  margin-bottom: 4px;
+}
+
+.od-cancel-box p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #7f1d1d;
+}
+
+.od-cancel-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.od-cancel-actions .od-btn.danger {
+  background: #dc2626;
+  color: #fff;
+  border: 1px solid #dc2626;
+}
+
+/* Mga mensahe */
+.od-notice {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.od-notice.success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.od-notice.warn {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.od-notice.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  margin: 0 0 10px;
+}
+
+.od-hint {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Dark mode (body.dark-mode, dahil naka-portal ang modal sa body) */
+body.dark-mode .od-cancel-box {
+  background: #2a1515;
+  border-color: #7f1d1d;
+}
+
+body.dark-mode .od-cancel-box b {
+  color: #fca5a5;
+}
+
+body.dark-mode .od-cancel-box p {
+  color: #fecaca;
+}
+
+body.dark-mode .od-notice.success {
+  background: #052e1f;
+  color: #6ee7b7;
+  border-color: #065f46;
+}
+
+body.dark-mode .od-notice.warn {
+  background: #2e2308;
+  color: #fcd34d;
+  border-color: #92400e;
+}
+
+body.dark-mode .od-notice.error {
+  background: #2a1515;
+  color: #fca5a5;
+  border-color: #7f1d1d;
+}
+
+body.dark-mode .od-hint {
+  color: #9ca3af;
+}
